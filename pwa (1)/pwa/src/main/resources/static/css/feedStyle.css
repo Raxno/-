@@ -1,0 +1,162 @@
+#session{
+    display: flex;
+    float: left;
+}
+.avatar-session{
+    margin-left: 130px;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+.nick-session{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #FFF;
+    margin-left: 10px;
+    padding-top: 25px;
+}
+.tcal{
+    float: right;
+    margin-top: 15px;
+    margin-left: 10px;
+    outline: none;
+}
+/*//////////////////////////*/
+#content-wrapper{
+    margin-top: 70px;
+    width: 100%;
+    background-color: #c6ccd8;
+}
+#content{
+    margin: 0 auto;
+    width: 900px;
+    overflow: hidden;
+    background-color: #f8f8f8; 
+}
+
+#post-wrapper{
+    margin: 30px auto;
+    width: 800px;
+	border: solid #ff0000 5px;/*потом убрать*/
+}
+#header-post{
+    display: flex;
+}
+#nickDate-align{
+    float: left;
+    margin: auto 20px;
+}
+.nick-post{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #85a1c1;
+    vertical-align: middle;
+}
+.date-post{
+    font-size: 24px;
+    vertical-align: top;
+    padding-left: 15px;
+}
+#hashtags-post, #description-post{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+#post-rating{
+    overflow: hidden;
+    margin-top: 15px;
+}
+#rating-circle{
+    width: 30px; 
+    height: 30px;
+    /*background: #274b69;*/
+    background: #383435;
+    border-radius: 50%;
+    float: left;
+    margin-right: 5px;
+}
+.comment-sign, .number-comment{
+    float: right;
+}
+.number-comment{
+    padding-right: 15px;
+}
+.rating, .number-comment{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+#comment{
+    margin-top: 10px;
+}
+#nickDate-comment, #comment-text{
+    width: 740px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+#avatar-comment{
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+#comment-text{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+#read-full-wrapper{
+  
+}
+.line{
+    width: 800px;
+    position: relative;
+    top: 25px;
+    z-index: 1;
+}
+#read-full{
+    position: relative;
+    margin: 0 auto;
+    background-color: #85a1c1;
+    width: 200px;
+    height: 31px;
+    border-radius: 15px 15px 15px 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    z-index: 2;
+}
+#read-full a{
+    color: #f8f8f8; 
+    text-decoration: none;
+}
+.user-comment{
+    outline: none;
+    width: 680px;
+    height: 50px;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px 10px 10px 10px;
+}
+.avatar-comment1{
+    float: left;
+}
+.user-comment{
+    margin-left: 10px;
+}
+
+#addComment{
+    margin-top: 10px;
+}
+#addComment img{
+    margin-top: 5px;
+}
+.addComment-sign{/*убрать верблюжий регистр*/
+    float: right;
+}
+.post-image{
+	max-width: 100%;
+}
+
+
+
+
+
+
+
+

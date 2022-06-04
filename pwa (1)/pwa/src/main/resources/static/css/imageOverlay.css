@@ -1,0 +1,205 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+#lightbox{
+	/*display: none;*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+	top: 0;
+    left: 0;
+	z-index: 2;
+}
+#overlay{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.8);
+}
+#image-window{
+    display: flex;
+    margin: 100px auto;
+}
+#image-post{
+    position: relative;
+    width: 100%;
+    height: 450px;
+	background: #404040;
+}
+ .lightboxImage{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 1280px;
+    min-width: 100px;
+    max-height: 720px;
+    min-height: 100px;
+    vertical-align: middle;
+}
+.copy{
+    position: absolute;
+    left: 82%;
+    top: 93%;
+    right: 0;
+    bottom: 0;
+    width: 207px;
+    height: 40px;
+    background-color: #dfdfdf;
+    border-radius: 10px 10px 10px 10px;
+}
+.delete{
+    position: absolute;
+    left: 64%;
+    top: 93%;
+    right: 0;
+    bottom: 0;
+    width: 207px;
+    height: 40px;
+    background-color: #dfdfdf;
+    border-radius: 10px 10px 10px 10px;
+}
+.copy-plus{
+    padding: 5px;
+    vertical-align: middle;
+}
+.delete-plus{
+    padding: 8px;
+    vertical-align: middle;
+}
+.copy:hover{
+    background-color: #d5d5d5;
+}
+.copy-text{
+    font-family: 'Roboto', sans-serif;
+    color: #838383;
+    font-size: 18px;
+    margin-left: 2px;
+}
+
+#info-post{
+    position: relative;
+    width: 500px;
+    background-color: #FFF;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+}
+
+#scroll-block{
+    height: 400px;
+    overflow-y: scroll;
+}
+
+#header-post{
+    display: flex;
+}
+#nickDate-align{
+    margin: auto 20px;
+}
+.nick-post{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #85a1c1;
+    vertical-align: middle;
+}
+.date-post{
+    font-size: 24px;
+    vertical-align: top;
+    padding-left: 15px;
+}
+#hashtags-post, #description-post{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+#hashtags-post a{
+    color: #85a1c1;
+}
+#hashtags-post a:visited{
+    color: #85a1c1;
+}
+#rating-post{
+    overflow: hidden;
+    margin-top: 15px;
+}
+#rating-circle{
+    width: 30px; 
+    height: 30px;
+    background: #838383;
+    border-radius: 50%;
+    float: left;
+    margin-right: 5px;
+}
+.comment-sign, .number-comment{
+    float: right;
+}
+.number-comment{
+    padding-right: 15px;
+}
+.rating, .number-comment{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+#hr-wrapper{
+    margin-top: 10px;
+}
+#comments-post{
+    height: 400px;
+}
+#comment{
+    overflow: hidden;
+    margin-top: 10px;
+}
+#nickDate-comment, #comment-text{
+    width: 400px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+#avatar-comment{
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+#comment-text{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
+.avatar-comment1{
+    float: left;
+    margin-top: 2px;
+}
+.user-comment{
+    margin-left: 10px;
+}
+
+#addComment{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15px;
+}
+.addComment-sign{
+    margin-top: 10px;
+   /* float: right;*/
+    margin-left: 10px;
+}
+.user-comment{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    outline: none;
+    width: 65%;
+    height: 50px;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 20px;
+}

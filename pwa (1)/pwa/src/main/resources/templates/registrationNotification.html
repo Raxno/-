@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/images/icon.png" type="image/png">
+    <title>Feed</title>
+    <link rel="stylesheet" th:href="@{/css/confirmStyle.css}">
+    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js}"></script>
+</head>
+<body>
+<div id="container">
+    <div id="header-wrapper">
+        <div id="polosa">
+            <a href="#"><img th:src="@{images/logotype.png}" alt="" class="logo"></a>
+        </div>
+    </div>
+
+    <div id="notification">
+        <div id="text">
+            <p th:text="#{registrationMessage}">На вашу почту было отправлено письмо с подтверждением регистрации вашего профиля</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

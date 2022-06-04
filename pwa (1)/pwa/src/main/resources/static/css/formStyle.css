@@ -1,0 +1,69 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+input::-webkit-input-placeholder{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #c7c7c7;
+}
+.req:invalid {
+    border-color: red;
+}
+input{
+    padding-left: 30px;
+    border: solid #c7c7c7 1px;
+    border-radius: 10px;
+    height: 67px;
+    background-color: #f8f8f8;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #838383;
+}
+
+input[type="submit"]{
+    padding-left: 0;
+}
+input[type="checkbox"]{
+    vertical-align: middle;
+    margin: 0;
+}
+label{
+    margin-left: 15px;
+    vertical-align: middle;
+}
+#container{
+    background-color: #c6ccd8;
+    width: 100vw;
+    height: 100vh;
+    display:inline-block;
+}
+.auto{
+    margin-top: 46px;
+    text-align: center;
+}
+#pass-wrapper{
+    position: relative;
+}
+.password-control{
+    position: absolute;
+    display: inline-block;
+    background: url(../images/eyeOff.png) 0 0 no-repeat;
+}
+.password-control.view {
+    background: url(../images/eyeOn.png) 0 0 no-repeat;
+}
+.enter{
+    width: 300px;
+    border: solid #c7c7c7 1px;
+    border-radius: 10px;
+    color: #FFF;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #274b69;
+}

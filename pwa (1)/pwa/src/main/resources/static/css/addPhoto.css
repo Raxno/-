@@ -1,0 +1,119 @@
+label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #838383;
+}
+input[type="button"]{
+    padding-left: 0;
+}
+input[type="file"]{
+    padding: 15px;
+}
+input[type="radio"]{
+    vertical-align: middle;
+    margin: 0;
+}
+label{
+    margin-left: 15px;
+    margin-top: 2px;
+    vertical-align: middle;
+}
+h1{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 54px;
+    margin: 0 0 40px 0;
+}
+.enter{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#container{
+    height: 100%;
+}
+#content-wrapper{
+    width: 100%;
+    margin-top: 70px;
+}
+#content-publications{
+    margin: 0 auto;
+    min-height: calc(100vh - 70px);
+    border-radius: 0 0 10px 10px;
+}
+#postUpload-wrapper{
+    width: 900px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.divText{
+    outline: none;
+    background: #f8f8f8;
+    width: 300px;
+    min-height: 27px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #838383;
+    border: solid #c7c7c7 1px;
+    border-radius: 10px;
+    padding: 0 30px;
+}
+[contentEditable=true]:empty:not(:focus):before{
+    font-family: 'Roboto', sans-serif;
+    content:attr(data-text);
+    font-size: 24px;
+    color: #c7c7c7;
+}
+
+#myDropdown{
+    width: 300px;
+    max-height: 215px;
+    overflow-y: scroll;
+}
+/* Кнопка выпадающего списка */
+.dropbtn {
+    background-color: #f8f8f8;
+    color: #274b69;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    padding: 16px;
+    cursor: pointer;
+    width: 300px;
+    height: 67px;
+    border: solid #c7c7c7 1px;
+}
+
+/* Кнопка выпадающего меню при наведении и фокусировке */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #c7c7c7;
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+.show {display:block;}

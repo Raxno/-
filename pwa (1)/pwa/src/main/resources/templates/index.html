@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" th:href="@{/css/profileStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/polosaStyle.css}"/>
+    <link rel="stylesheet" th:href="@{/css/tcal.css}">
+    <link rel="stylesheet" th:href="@{/css/indexStyle.css}">
+    <link rel="shortcut icon" th:href="@{/images/icon.png}" type="image/png">
+    <title>Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script th:src="@{/js/tcal.js}"></script>
+
+
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+</head>
+<body>
+<div id="container">
+    <div id="header-wrapper">
+        <div id="polosa">
+            <div id="search-exit">
+                <form id="logoutForm" action="#" th:action="@{/logout}" method="post">
+                    <a href="#" th:href="@{/logout}" th:text="#{button.exit}" class="exit">Выйти</a>
+                </form>
+                <a th:href="@{/}"><img th:src="@{/images/logotype.png}" alt="" class="logo"></a>
+                <div id="session">
+                    <a th:href = "@{'/user/' + ${nickname}}"><img th:src="@{/images/avatar.png}" class="avatar-session" alt="" width="50px" height="50px"></a>
+                    <a class="nick-session" id="nickname" th:text="${nickname}" th:href = "@{'/user/' + ${nickname}}">Nickname</a>
+                </div>
+                <a href="#" th:href="@{/search}" th:text="#{button.search}" class="exit">Поиск</a>
+            </div>
+        </div>
+    </div>
+    <div id="content-wrapper">
+        <div class="publications" id="content-publications">
+            <h1>Вы авторизованы как <span th:text="${nickname}">Nickname</span></h1>
+        </div>
+        <div class="albums" id="content-album"></div>
+        <div class="one-album" id="content-one-album"></div>
+    </div>
+</div>
+</body>
+</html>

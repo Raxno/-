@@ -1,0 +1,38 @@
+.form-wrapper{
+    max-width: 400px;
+    height: 570px;
+    margin: 5.4% auto 0 auto;
+    background-color: #FFF;
+    border-radius: 30px;
+    border: solid #c7c7c7 2px;
+}
+#field1{
+    margin-top: 45px;
+}
+
+#password-input, #field{
+    margin-top:26px;
+}
+
+#field2{
+    position: relative;
+    z-index: 0;
+}
+#field3{
+    width: 300px;
+    margin: 26px auto 0;
+}
+.password-control{
+    top: 50px;
+    right: 60px;
+    width: 40px;
+    height: 20px;
+}
+#field5{
+   margin-top: 19px;
+}
+.goReg{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px; 
+    color: #274b69;
+}

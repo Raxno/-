@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" th:href="@{/css/profileStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/formStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/imageOverlay.css}">
+    <link rel="stylesheet" th:href="@{/css/polosaStyle.css}"/>
+    <link rel="stylesheet" th:href="@{/css/addPhoto.css}"/>
+    <link rel="shortcut icon" th:href="@{/images/icon.png}" type="image/png">
+    <title>Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script th:src="@{/js/photoAJAX.js}"></script>-->
+    <script th:src="@{/js/addAlbumScript.js}"></script>
+    <script th:src="@{/js/addAlbumAJAX.js}"></script>
+
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+</head>
+<body>
+<div id="container">
+    <div id="header-wrapper">
+        <div id="polosa">
+            <div id="search-exit">
+                <form id="logoutForm" action="#" th:action="@{/logout}" method="post">
+                    <a href="#" th:href="@{/logout}" th:text="#{button.exit}" class="exit">Выйти</a>
+                </form>
+                <a th:href="@{/}"><img th:src="@{/images/logotype.png}" alt="" class="logo"></a>
+                <div id="session">
+                    <a th:href = "@{'/user/' + ${nickname}}"><img th:src="@{/images/avatar.png}" class="avatar-session" alt="" width="50px" height="50px"></a>
+                    <a class="nick-session" id="nickname" th:text="${nickname}" th:href = "@{'/user/' + ${nickname}}">Nickname</a>
+                </div>
+                <a href="#" th:href="@{/search}" th:text="#{button.search}" class="exit">Поиск</a>
+            </div>
+        </div>
+    </div>
+    <div id="content-wrapper">
+    <div class="publications" id="content-publications">
+        <div id="postUpload-wrapper">
+            <h1>Добавление новой фотографии</h1>
+            <form action="" th:action="@{/photo/img-upload}" method="post" enctype="multipart/form-data" th:object="${uploadForm}">
+                <input type="hidden" th:value="${profileId}" name="profileId">
+                <p><input type="text" th:field="*{tags}" class="divText" placeholder="Теги" th:placeholder="#{placeholder.tags}" pattern="^[A-Za-zА-Яа-яЁё0-9_\s]+$"></p>
+                <p><input type="text" th:field="*{description}" class="divText" placeholder="Описание" th:placeholder="#{placeholder.description}"></p>
+                <p><input type="text" th:field="*{albumName}" class="divText" placeholder="Альбом" th:placeholder="#{placeholder.album}"></p>
+
+                <p><input type="button" class="enter" value="Добавить альбом" id="addAlbumButton" th:value="#{button.addAlbum}"></p>
+
+                 <div id="new-album">
+                    <p><input type="text" placeholder="Имя альбома" id="newAlbumName"></p>
+                    <p><input type="radio" name="album-type"><label th:text="#{label.open}">Открытый</label></p>
+                    <p><input type="radio" name="album-type"><label th:text="#{label.forFriends}">Для друзей</label></p>
+                    <p><input type="radio" name="album-type"><label th:text="#{label.closed}">Закрытый</label></p>
+                    <p><input type="button" class="enter" value="Создать aльбом" th:value="#{button.createAlbum}" id="createAlbumButton"></p>
+                 </div>
+
+                <p><input type="file" name="files" value="Загрузить картинку" th:value="#{button.select}"></p>
+
+                <input type="submit" class="enter" value="Добавить" th:value="#{submit.addImage}">
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

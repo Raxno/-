@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" th:href="@{/images/icon.png}" type="image/png">
+    <title>Change password</title>
+    <link rel="stylesheet" th:href="@{/css/changePass.css}">
+    <link rel="stylesheet" th:href="@{/css/formStyle.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script th:src="@{https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js}"></script>
+    <script th:src="@{/js/showPass.js}"></script>
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="form-wrapper">
+            <form action="#" th:action="@{/change_password}" method="post" class="auto" th:object="${codeForm}">
+               <div id="logo">
+                   <img th:src="@{images/bluelogotype.png}" alt="">
+               </div>
+	            
+                <div id="field1">
+                    <input type="text" placeholder="Code" th:placeholder="#{input.code}" th:field="*{code}">
+                </div>
+                
+                <div id="field2">
+                    <input type="password" class="password-input" id="password1" placeholder="Пароль" name="password" th:field="*{password}">
+                    <a href="#" class="password-control" id="eye1" onclick="showPassword('#password1', '#eye1')"></a>
+                </div>
+                
+                <div id="field3">
+                    <input type="password" class="password-input" id="password2" placeholder="Повторите Пароль" name="password" th:field="*{passwordConfirm}">
+                    <a href="#" class="password-control" id="eye1" onclick="showPassword('#password1', '#eye1')"></a>
+                </div>
+                
+                <input type="submit" class="enter" value="Изменить пароль" th:value="#{button.changePass}" th:href="@{/login}"> 
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

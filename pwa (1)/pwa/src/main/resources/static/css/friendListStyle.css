@@ -1,0 +1,88 @@
+#session{
+    display: flex;
+    float: left;
+}
+.avatar-session{
+    margin-left: 130px;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+.nick-session{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #FFF;
+    margin-left: 10px;
+    padding-top: 25px;
+}
+.tcal{
+    float: right;
+    margin-top: 15px;
+    margin-left: 10px;
+    outline: none;
+}
+/*//////////////////////////*/
+#content-wrapper{
+    margin-top: 70px;
+    width: 100%;
+    background-color: #c6ccd8;
+}
+#content{
+    margin: 0 auto;
+    width: 900px;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    min-height: calc(100vh - 70px);
+}
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    color: #505050;
+    text-align: center;
+}
+#list-wrapper{
+    margin: 0px auto;
+    width: 800px;
+}
+#profile-block{
+    height: 100px;
+}
+#img-text{
+}
+#nick-name{
+    padding-left: 15px;
+    padding-top: 10px;
+    float: left;
+}
+#nick-name p{
+    margin: 0;
+}
+.nick-post{
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    color: #505050;
+}
+.name-people{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: #505050;
+}
+#f-avatar{
+    float:left;
+}
+#actions{
+    padding-top: 13px;
+    float: right;
+}
+hr{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+

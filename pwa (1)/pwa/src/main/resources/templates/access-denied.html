@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" th:href="@{/css/profileStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/formStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/polosaStyle.css}"/>
+    <link rel="stylesheet" th:href="@{/css/img-error.css}"/>
+    <link rel="shortcut icon" th:href="@{/images/icon.png}" type="image/png">
+    <title>Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+
+</head>
+
+<body>
+<div id="container">
+    <div id="header-wrapper">
+        <div id="polosa">
+            <div id="search-exit">
+                <form id="logoutForm" action="#" th:action="@{/logout}" method="post">
+                    <a href="#" th:href="@{/logout}" th:text="#{button.exit}" class="exit">Выйти</a>
+                </form>
+                <a th:href="@{/}"><img th:src="@{/images/logotype.png}" alt="" class="logo"></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="content-wrapper">
+        <div class="publications" id="content-publications">
+            <h1>Вы не можете совершить данное действие</h1>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

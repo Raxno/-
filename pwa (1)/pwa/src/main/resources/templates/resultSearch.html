@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" th:href="@{/css/profileStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/resultSearchStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/polosaStyle.css}"/>
+    <link rel="stylesheet" th:href="@{/css/tcal.css}">
+    <link rel="stylesheet" th:href="@{/css/imageOverlay.css}">
+	<link rel="shortcut icon" th:href="@{/images/icon.png}" type="image/png">
+    <title>Search</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{js/tabScript.js}"></script>
+    <script th:src="@{/js/tcal.js}"></script>
+    <script th:src="@{/js/searchAJAX.js}"></script>
+    <script th:src="@{/js/tagAJAX.js}"></script>
+	<script th:src="@{/js/commentAJAX.js}"></script>
+	<script th:src="@{/js/markAJAX.js}"></script>
+    <script th:src="@{/js/imageOverlay.js}"></script>
+
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+</head>
+<body>
+    <div id="container">
+    <div id="lightbox">
+          <div id="overlay"></div>
+           <div id="image-window">
+                <div id="image-post">
+                    <img src="" class="lightboxImage" alt="">
+                </div>
+                <div id="info-post">
+                <div id="scroll-block">
+                    <div id="header-post">
+                        <img th:src="@{/images/avatar.png}" alt="" width="60px" height="60px">
+                        <div id="nickDate-align">
+                            <a href="#" class="nick-post" th:text="${nickname}" th:href = "@{'/user/' + ${nickname}}">Nickname</a>
+                            <span class="date-post" id="postDate"></span>
+                        </div>
+                    </div>
+                    <div id="hashtags-post"><p id = "hashtagsP"></p></div>
+                    <div id="description-post"><p id = "descriptionP"></p></div>
+                    <div id="rating-post">
+                        <div id="rating-circle"></div>
+                        <div id="rating-circle"></div>
+                        <div id="rating-circle"></div>
+                        <div id="rating-circle"></div>
+                        <div id="rating-circle"></div>
+                        <span class="rating" id="rating"></span>
+                        <a href=""><img th:src="@{/images/comment-sign.png}" class="comment-sign"alt=""></a>
+                        <span class="number-comment" id="commentNumber"></span>
+                    </div>
+                    <div id="hr-wrapper">
+                        <hr>
+                    </div>
+                    <div id="comments-post">
+                   
+                        <div id="comment">
+                            <div id="avatar-comment">
+                                <img th:src="@{/images/avatar.png}" alt="" width="50px" height="50px">
+                            </div>
+                            <div id="nickDate-comment">
+                                <a href="#" class="nick-post">Nickname</a>
+                                <span class="date-post">dd.mm.yyyy   00:00</span>
+                            </div>
+                            <div id="comment-text">
+                                 Comment Comment Comment
+                            </div>
+                        </div>
+                    </div>
+                    <div id="addComment">
+                            <img th:src="@{/images/avatar.png}" class="avatar-comment1" alt="" width="50px" height="50px">
+                            <input type="text" class="user-comment" id="commentInput" maxlength="200">
+                            <a href="#"><img th:src="@{/images/addComment.png}" class="addComment-sign" id="commentButton" alt=""></a>
+                    </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+        <div id="header-wrapper">
+            <div id="polosa">
+                <div id="search-exit">
+                    <form id="logoutForm" action="#" th:action="@{/logout}" method="post">
+                        <a href="#" th:href="@{/logout}" th:text="#{button.exit}" class="exit">Выйти</a>
+                    </form>
+                    <a th:href="@{'/user/' + ${nickname}}"><img th:src="@{/images/logotype.png}" alt="" class="logo"></a>
+                    <div id="session">
+                        <a th:href = "@{'/user/' + ${nickname}}"><img th:src="@{/images/avatar.png}" class="avatar-session" alt="" width="50px" height="50px"></a>
+                        <a class="nick-session" id="nickname" th:text="${nickname}" th:href = "@{'/user/' + ${nickname}}">Nickname</a>
+                    </div>
+                    <div class="rating-menu">
+                        <a href="#"><img th:src="@{/images/rating.png}" class="rate" alt="" id="ratingImage"></a>
+                        <div class="rating-menu-content" id="rating-numbers">
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                        </div>
+                    </div>
+
+                    <input type="text" name="date" class="tcal" id="dateSelector" value="" />
+
+                    <input type="text" id="search">
+                    <img th:src="@{/images/loupeBackground.png}" class="loupe" alt="">
+                </div>
+            </div>
+        </div>
+		<div class="publications" id="content-publications"> </div>
+		<span id="photo-id" style="display: none;"></span>
+    </div>
+</body>
+</html>

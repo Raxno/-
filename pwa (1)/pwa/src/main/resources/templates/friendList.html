@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/images/icon.png" type="image/png">
+    <title>Friend list</title>
+    <link rel="stylesheet" th:href="@{/css/friendListStyle.css}">
+    <link rel="stylesheet" th:href="@{/css/tcal.css}">
+    <link rel="stylesheet" th:href="@{/css/polosaStyle.css}"/>
+    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js}"></script>
+    <script th:src="@{/js/tcal.js}"></script>
+    <script defer th:src="@{/js/friendListAJAX.js}"></script>
+    
+    <meta name="_csrf" th:content="${_csrf.token}" />
+	<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+</head>
+<body>
+<div id="container">
+    <div id="header-wrapper">
+        <div id="polosa">
+            <div id="search-exit">
+                <a href="#" th:href="@{/logout}" class="exit">Выйти</a>
+                <a th:href="@{/}"><img th:src="@{/images/logotype.png}" alt="" class="logo"></a>
+                <div id="session">
+                    <a th:href = "@{'/user/' + ${nickname}}"><img th:src="@{/images/avatar.png}" class="avatar-session" alt="" width="50px" height="50px"></a>
+                    <a class="nick-session" id="nick" th:text="${nickname}" th:href = "@{'/user/' + ${nickname}}">Nickname</a>
+                </div>
+                 <div id="session">
+                    <a th:href = "@{'/user/' + ${nicknameView}}"><img th:src="@{/images/avatar.png}" class="avatar-session" alt="" width="50px" height="50px"></a>
+                    <a class="nick-session" id="nickView" th:text="${nicknameView}" th:href = "@{'/user/' + ${nicknameView}}">Nickname</a>
+                </div>
+                <a href="#" th:href="@{/search}" th:text="#{button.search}" class="exit">Поиск</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="content-wrapper">
+        <div id="content">
+            <div id="list-wrapper">
+                <div id="friends">
+                    <h1>Friends</h1>
+                   <hr id="start">
+                </div>
+                <div id="followers">
+                    <h1>Followers</h1>
+                   <hr id="start">
+                </div>
+                <div id="subscriptions">
+                    <h1>Subscriptions</h1>
+                   <hr id="start">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

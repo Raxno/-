@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" th:href="@{/css/profileStyle.css}">
+	<link rel="stylesheet" th:href="@{/css/imageOverlay.css}">
+    <link rel="stylesheet" th:href="@{/css/polosaStyle.css}"/>
+    <link rel="stylesheet" th:href="@{/css/tcal.css}">
+	<link rel="shortcut icon" th:href="@{/images/icon.png}" type="image/png">
+    <title>Profile</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/js/profileScript.js}"></script>
+	<script th:src="@{/js/imageOverlay.js}"></script>
+	<script th:src="@{/js/tabScript.js}"></script>
+	<script th:src="@{/js/addFriendAJAX.js}"></script>
+	<script th:src="@{/js/photoAJAX.js}"></script>
+	<script th:src="@{/js/tagAJAX.js}"></script>
+	<script th:src="@{/js/commentAJAX.js}"></script>
+	<script th:src="@{/js/markAJAX.js}"></script>
+	<script th:src="@{/js/albumAJAX.js}"></script>
+	<script th:src="@{/js/copyAJAX.js}"></script>
+    <script th:src="@{/js/tcal.js}"></script>
+    <script th:src="@{/js/profileAJAX.js}"></script>
+
+
+	<meta name="_csrf" th:content="${_csrf.token}" />
+	<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+</head>
+<body>
+    <div id="container">
+    <div id="lightbox">
+          <div id="overlay"></div>
+           <div id="image-window">
+                <div id="image-post">
+                    <img src="" class="lightboxImage" alt="">
+                    <a href="#">
+                    <div class="copy" id="copyButton">
+                        <div class="copy-menu">
+                            <img class="copy-plus" th:src="@{/images/plus.png}" alt="">
+                            <span class="copy-text">Скопировать себе</span>
+                            <div class="copy-menu-content" id="copy-albums">
+                                <a href="#">album 1</a>
+                                <a href="#">album 2</a>
+                                <a href="#">album 3</a>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                    <a href="#">
+                    <div class="delete" id="deleteButton">
+                        <img class="delete-plus" th:src="@{/images/x.png}" alt="">
+                        <span class="copy-text">Удалить</span>
+                    </div>
+                    </a>
+                </div>
+                <div id="info-post">
+                <div id="scroll-block">
+                    <div id="header-post">
+                        <img th:src="@{/images/avatar.png}" alt="" width="60px" height="60px">
+                        <div id="nickDate-align">
+                            <a href="#" class="nick-post" th:text="${nicknameView}" th:href = "@{'/user/' + ${nickname}}">Nickname</a>
+                            <span class="date-post" id="postDate"></span>
+                        </div>
+                    </div>
+                    <div id="hashtags-post"><p id = "hashtagsP"></p></div>
+                    <div id="description-post"><p id = "descriptionP"></p></div>
+                    <div id="rating-post">
+                        <div id="rating-circle"></div>
+                        <div id="rating-circle"></div>
+                        <div id="rating-circle"></div>
+                        <div id="rating-circle"></div>
+                        <div id="rating-circle"></div>
+                        <span class="rating" id="rating"></span>
+                        <a href=""><img th:src="@{/images/comment-sign.png}" class="comment-sign"alt=""></a>
+                        <span class="number-comment" id="commentNumber"></span>
+                    </div>
+                    <div id="hr-wrapper">
+                        <hr>
+                    </div>
+                    <div id="comments-post">
+                   
+                        <div id="comment">
+                            <div id="avatar-comment">
+                                <img th:src="@{/images/avatar.png}" alt="" width="50px" height="50px">
+                            </div>
+                            <div id="nickDate-comment">
+                                <a href="#" class="nick-post">Nickname</a>
+                                <span class="date-post">dd.mm.yyyy   00:00</span>
+                            </div>
+                            <div id="comment-text">
+                                 Comment Comment Comment
+                            </div>
+                        </div>
+                    </div>
+                    <div id="addComment">
+                            <img th:src="@{/images/avatar.png}" class="avatar-comment1" alt="" width="50px" height="50px">
+                            <input type="text" class="user-comment" id="commentInput" maxlength="200">
+                            <a href="#"><img th:src="@{/images/addComment.png}" class="addComment-sign" id="commentButton" alt=""></a>
+                    </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+        <div id="header-wrapper">
+            <div id="polosa">
+                <div id="search-exit">
+
+                    <form id="logoutForm" action="#" th:action="@{/logout}" method="post">
+                        <a href="#" th:href="@{/logout}" th:text="#{button.exit}" class="exit">Выйти</a>
+                    </form>
+                    <a th:href="@{/}"><img th:src="@{/images/logotype.png}" alt="" class="logo"></a>
+                    <div id="session">
+                        <a th:href = "@{'/user/' + ${nickname}}"><img th:src="@{/images/avatar.png}" class="avatar-session" alt="" width="50px" height="50px"></a>
+                        <a class="nick-session" id="nickname" th:text="${nickname}" th:href = "@{'/user/' + ${nickname}}">Nickname</a>
+                    </div>
+                    <a href="#" th:href="@{/search}" th:text="#{button.search}" class="exit">Поиск</a>
+                </div>
+            </div>
+            
+            <!-- ///////////////////////////////////////////// -->
+            <div id="profile-back">
+                <div id="profile-info">
+                    <div id="avatar">
+                        <a href="#"><img th:src="@{/images/avatar.png}" alt=""></a>
+                    </div>
+                    <div id="text-profile">
+                        <div id="nickPlus">
+                            <div id="nickText">
+                               <h1 id="nick" th:text="${nicknameView}">Nickname</h1>
+                            </div>
+							
+                            <div class="add-friend" id="addFriend">
+                               <img class="add-friend-plus" th:src="@{/images/plus.png}" alt="">
+                               <span class="add-friend-text" th:text="#{addFriend}">Добавить в друзья</span>
+                           </div>
+                           <div class="add-friend" id="addFriend">
+                               <img class="add-friend-plus" th:src="@{/images/x.png}" alt="">
+                               <span class="add-friend-text" th:text="#{deleteFriend}">Удалить из друзей</span>
+                           </div>
+                           <div class="add-friend" id="addFriend">
+                               <img class="add-friend-plus" th:src="@{/images/x.png}" alt="">
+                               <span class="add-friend-text" th:text="#{unsubscribe}">Отписаться</span>
+                           </div>
+							
+                        </div>
+                        <div id="menu">
+                            <ul class="user-menu" id="rating-menu">
+                                <li><a href="#" th:text="${publications} + ' ' + #{user.publications}">0 Публикации</a></li>
+                                <li><a href="#" th:text="${friends} + ' ' + #{user.friends}" th:href = "@{'/user/' + ${nicknameView} + '/friend_list'}">0 друзей</a></li>
+                                <li><a href="#" th:text="${followers} + ' ' + #{user.followers}" th:href = "@{'/user/' + ${nicknameView} + '/friend_list'}">0 подписчиков</a></li>
+								<li><a href="#" th:text="${subscribes} + ' ' + #{user.subscribes}" th:href = "@{'/user/' + ${nicknameView} + '/friend_list'}">0 подписок</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="button-block">
+                        <a href="#">
+                            <div id="ban">
+                                <span class="copy-text">Заблокировать</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ///////////////////////////////////////////// -->
+        </div>
+        <div id="content-menu-wrapper">
+            <label class="tab active" id="publications-tab" th:text="#{button.publications}">Публикации</label>
+            <label class="tab" id="albums-tab" th:text="#{button.albums}">Альбомы</label>
+			<label class='tab' id="one-album-tab" th:text="#{button.album}">Альбооооооооооом картинкиии</label>
+
+            <a th:href = "@{'/photo/img-upload?profileId=' + ${profileId}}">
+			    <div class="add-photo" id="addPhotoButton">
+                    <img class="add-photo-camera" th:src="@{/images/camera.png}">
+                    <span class="add-photo-text" th:text="#{button.addPhoto}">Добавить фото</span>
+                </div>
+            </a>
+
+        </div>
+            <div class="publications" id="content-publications"></div>
+            <div class="albums" id="content-album"></div>
+            <div class="one-album" id="content-one-album"></div>
+    </div>
+    <span id="photo-id" style="display: none;"></span>
+</body>
+</html>

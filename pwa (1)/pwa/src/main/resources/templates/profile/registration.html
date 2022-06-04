@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" th:href="@{/images/icon.png}" type="image/png">
+    <title>Registration</title>
+    <link rel="stylesheet" th:href="@{/css/formStyle.css}"/>
+    <link rel="stylesheet" th:href="@{/css/registrationStyle.css}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script th:src="@{https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js}"></script>
+    <script th:src="@{/js/showPass.js}"></script>
+    <script defer th:src="@{/js/notification.js}"></script>
+    <script th:src="@{/js/inputEmptyValid.js}"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="form-wrapper">
+            <form action="#" th:action="@{/profile/registration}" th:object="${profileForm}" method="post" class="auto">
+               <div id="logo">
+                   <img th:src="@{/images/bluelogotype.png}" alt="">
+               </div>
+               <div id="input-wrapper">
+                   <div id="input-left">
+                       <input type="text" class="rfield" placeholder="Имя" th:field="*{firstName}" th:placeholder="#{placeholder.name}" required>
+                       <input type="text"  class="rfield" placeholder="Фамилия" th:field="*{lastName}" th:placeholder="#{placeholder.NAME}" required>
+                       <input type="text"  class="rfield" placeholder="Псевдоним" th:field="*{nickname}" th:placeholder="#{placeholder.nickname}" required>
+                   </div>
+                   <div id="input-right">
+                        <input type="email" class="rfield" placeholder="Email" th:field="*{email}" required>
+                        <div id="pass-wrapper">
+                            <input type="password" class="rfield" id="password1" placeholder="Пароль" name="password" th:field="*{password}" th:placeholder="#{placeholder.password}" required>
+                            <a href="#" class="password-control" id="eye1"  onclick="showPassword('#password1', '#eye1')"></a>
+                        </div>
+                        <div id="pass-wrapper">
+                            <input type="password" class="rfield" id="password2" placeholder="Повторите пароль" name="password" th:field="*{passwordConfirm}" th:placeholder="#{placeholder.againPassword}" required>
+                            <a href="#" class="password-control" id="eye2" onclick="showPassword('#password2', '#eye2')"></a>
+                        </div>
+                   </div> 
+               </div>
+                <div id="field3">
+                   <input type="submit" class="enter disabled" value="Зарегестрироваться" th:value="#{registration}" id="button">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

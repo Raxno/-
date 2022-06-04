@@ -1,0 +1,15 @@
+.publications{
+    font-family: 'Roboto', sans-serif;
+}
+.publications h1{
+    padding-top: 15px;
+    text-align: center;
+}
+.publications p{
+    margin-left: 15px;
+    font-size: 36px;
+}
+.publications ul{
+    margin-left: 30px;
+    font-size: 28px;
+}

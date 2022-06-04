@@ -1,0 +1,24 @@
+.form-wrapper{
+    max-width: 400px;
+    height: 528px;
+    margin: 5.4% auto 0 auto;
+    background-color: #FFF;
+    border-radius: 30px;
+    border: solid #c7c7c7 2px;
+}
+#field1{
+    margin-top: 10px;
+}
+input{
+	margin-top:26px;
+}
+
+#field2, #field3{
+    position: relative;
+}
+.password-control{
+	top: 50px;
+	right: 60px;
+	width: 40px;
+	height: 20px;
+}
