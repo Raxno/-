@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивная дискография</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Слава Богу, не блин <span>Слава КПСС</span></h1>
+    <div class="form__input">
+        <input type="text" placeholder="Введите название трека" class="track__name">
+        <input type="number" placeholder="Дата" min="2008" max="2025" class="time">
+        <input type="number" placeholder="Rate" min="1", max="10" class="rate">
+        <button class="btn__add-film">Добавить</button>
+    </div>
+   <div class="filters">
+        <button class="filter-btn" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="watched">Старые</button>
+        <button class="filter-btn" data-filter="unwatched">Оценка: 10⭐</button>
+   </div>
+    <div class="cards__wrap">
+        <div class="card">
+            <img src="./image/true.webp" alt="" class="card__image">
+            <h4 class="card-track__name">Стыдно жить</h4>
+            <p class="desc">Но гордыня ведь и есть обратная сторона стыда
+                И я на этих качелях, пожалуй, жил всегда
+                От «охуенен и пиздат» до «боже, какая я хуета»</p>
+            <p class="card__rate">Рейтинг: 8 ⭐</p>
+            <p class="card__date">2025</p>
+        </div>
+        <div class="card">
+            <img src="./image/bard.png" alt="" class="card__image">
+            <h4 class="card-track__name">Кайфоград</h4>
+            <p class="desc">Вообрази, как охуенно быть вечно пьяным
+                Не стану старым, стану мэром Кайфограда, ведь мы
+                Любим жить от души, запах *****</p>
+            <p class="card__rate">Рейтинг: 9 ⭐</p>
+            <p class="card__date">2023</p>
+        </div>
+        <div class="card">
+            <img src="./image/usa.jpg" alt="" class="card__image">
+            <h4 class="card-track__name">Камень урины</h4>
+            <p class="desc"> Сделал как он велел, вода желтела
+                Вода желтела, вода желтела
+                Вода желтела, желтела однако
+                Это золото, нет, чую запах аммиака</p>
+            <p class="card__rate">Рейтинг: 10 ⭐</p>
+            <p class="card__date">2023</p>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

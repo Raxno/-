@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* background: #283036; */
+    background: #1e252b;
+}
+
+img{
+    width: 260px;
+    margin: 0;
+    padding: 0;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+    font-size: 46px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+h1 span{
+    color: #B32821;
+}
+.form__input {
+    margin: 0 auto;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+.track__name {
+    padding: 15px 65px;
+    border-radius: 15px;
+    color: white;
+    font-size: 18px;
+    background: #283036;
+    border: transparent;
+    margin-right: 25px;
+}
+.time{
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    background: #283036;
+    border: transparent;
+    margin-right: 25px;
+}
+.rate{
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    background: #283036;
+    border: transparent;
+    margin-right: 25px;
+    
+}
+.btn__add-film{
+    padding: 16px 40px;
+    background: #FF6E30;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: transparent;
+    color: white;
+    cursor: pointer;
+}
+.filters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.filter-btn{
+    padding: 15px 35px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    background: #283036;
+    border: transparent;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; 
+}
+.filter-btn:hover{
+    transform: scale(0.98);
+}
+.cards__wrap {
+    display: flex;
+    align-items: center;
+    gap: 40px;  
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 70px;
+    flex-wrap: wrap;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card:hover {
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(50px);    
+}
+.card-track__name {
+    font-size: 20px;
+    color: #B32821;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.desc {
+    font-size: 14px;
+    width: 245px;
+    text-align: center;
+    margin-bottom: 0;
+    margin-bottom: 20px;
+}
+.card__rate {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.card__date {
+    text-align: center;
+}
